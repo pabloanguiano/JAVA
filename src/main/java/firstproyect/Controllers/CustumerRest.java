@@ -2,6 +2,7 @@ package firstproyect.Controllers;
 
 import firstproyect.modeldomain.Customer;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
@@ -19,5 +20,15 @@ public class CustumerRest {
     @GetMapping("/list")
     public List<Customer> getClients_method() {
         return clients;
+    }
+@GetMapping("/list/{user}")
+    public Customer FindCustomer(@PathVariable String user){
+
+        for (Customer c: clients){
+            if (c.getUser().equalsIgnoreCase(user)){
+                return c;
+            }
+        }
+        return null;
     }
 }

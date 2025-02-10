@@ -8,10 +8,10 @@ public class Customer {
     private String Password;
 
     public Customer(int id, String name, String user, String password) {
-        Id = id;
-        Name = name;
+        this.Id = id;
+        this.Name = name;
         this.user = user;
-        Password = password;
+       this.Password = password;
     }
 
     public int getId() {
